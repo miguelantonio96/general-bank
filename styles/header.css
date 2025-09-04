@@ -1,0 +1,304 @@
+
+.header__alert{
+  background-color: #6bd1ff61;
+  color: var(--azul-claro);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.header__container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #2f2f2f;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__list {
+  max-width: 1280px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-basis: 100%;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  font-family: var(--fuente-logo);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--azul-claro);
+  cursor: pointer;
+}
+
+.header__final-logo {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-list__link {
+  position: relative;
+  margin: 0 1.5em;
+  list-style: none;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--black);
+  border-inline: 3px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+/* .header-list__link:hover {
+  border-inline: 3px solid var(--azul-claro);
+  border-radius: 5px;
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--azul-claro);
+} */
+
+.header-list__link__active {
+  border-inline: 3px solid var(--azul-claro);
+  border-radius: 5px;
+  background-color: #c7eeff;
+  color: var(--azul-claro);
+}
+
+.header__sub-list {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  font-size: 18px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex-direction: column;
+  min-width: 190px;
+  z-index: 10;
+  cursor: auto;
+}
+
+.show__header__nav-sub-list {
+  display: flex;
+}
+
+.header__sub-list-item {
+  width: 100%;
+  padding: 5px;
+  list-style: none;
+  color: var(--black);
+  text-wrap: nowrap;
+  font-weight: 500;
+}
+.header__sub-list-item:hover {
+  color: var(--azul-claro);
+  text-decoration: underline;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.header__services-arrow {
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.header__search-and-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__search-container .header__search {
+  border: 2px solid #2f2f2f;
+  border-radius: 20px;
+  padding: 0.7em 1em;
+  width: 20vw;
+  outline: none;
+}
+.header__search-icon-container {
+  cursor: pointer;
+  color: var(--azul-claro);
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+  background: url("../img/icon_buscar.png") no-repeat 100% center;
+  background-size: contain;
+  display: block;
+}
+
+.header__search-icon-hidden {
+  display: none;
+}
+
+.header__search-close-btn {
+  cursor: pointer;
+  color: var(--azul-claro);
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.header__search-close-btn:hover {
+  background-color: #6bd0ff3e;
+  transform: scale(1.1);
+}
+
+.header__search-parent {
+  position: absolute;
+  top: 74px;
+  left: 0;
+  width: 100%;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #c5ecfd;
+  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.header__search-item {
+  position: relative;
+  pointer-events: auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgb(107 209 255 / 43%);
+  padding: 10px;
+  margin: 5px;
+  width: 40%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  color: #303030;
+}
+.header__search-input {
+  width: 100%;
+  border: 2px solid var(--azul-claro);
+  border-radius: 10px;
+  padding: 0.7em 1em;
+  outline: none;
+}
+.header__search-input::placeholder {
+  font-size: 18px;
+  background: url("../img/icon_buscar.png") no-repeat 100% center;
+}
+
+.header-list__item a {
+  text-decoration: none;
+}
+
+.header__buttons {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background-color: #f5f5f5;
+  border-radius: 0 0 8px 8px;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+}
+
+.login__header-modal {
+  display: none;
+  width: 450px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f5f5f5;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.login__header-modal--hidden {
+  display: none;
+  opacity: 0;
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.login__header-modal--show {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    height: 0;
+  }
+  to {
+    height: 438px;
+  }
+}
+
+.login__modal-container {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__title {
+  margin: 25px 0;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.form__text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4f4f4f;
+  text-align: center;
+}
+.login__header-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .header__container {
+    margin: 2em;
+  }
+
+  .header__search-container,
+  .header-list__link {
+    display: none;
+  }
+
+  .header__buttons {
+    display: block;
+  }
+}
