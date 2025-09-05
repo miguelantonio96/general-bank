@@ -22,3 +22,10 @@
   flex-direction: column;
   width: 100%;
 }
+
+.form__terms-conditions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}

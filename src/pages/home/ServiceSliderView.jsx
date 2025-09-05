@@ -1,60 +1,75 @@
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const servicesListInit = [
   {
     id: 1,
     title: "Credit Cards",
     description: "Explore our range of credit cards tailored to your needs.",
-    image: "/img/tarjeta_credito.png",
+    image: "/img/credit-card_service_slider.jpg",
   },
   {
     id: 2,
     title: "Personal Loans",
     description:
       "Get the financial support you need with our flexible personal loans.",
-    image: "/img/personal-loan.jpg",
+    image: "/img/personal-loan_services-slider.jpg",
   },
   {
     id: 3,
     title: "Mortgage",
     description: "Find the right mortgage solution for your needs.",
-    image: "/img/hipoteca.png",
+    image: "/img/mortgage_services-slider.jpg",
   },
   {
     id: 4,
     title: "Auto Loans",
     description:
       "Get the financial support you need with our flexible auto loans.",
-    image: "/img/prestamo_auto.png",
+    image: "/img/auto-loans_services-slider.jpg",
   },
   {
     id: 5,
     title: "Investing",
     description: "Explore our range of credit cards tailored to your needs.",
-    image: "/img/inversion.png",
+    image: "/img/investing_services-slider.jpg",
   },
   {
     id: 6,
     title: "Business Loans",
     description:
       "Get the financial support you need with our flexible business loans.",
-    image: "/img/prestamo_negocio.png",
+    image: "/img/business_services-slider.jpg",
   },
 ];
 
 export const ServiceSliderView = () => {
   const [services, setServices] = useState(servicesListInit);
 
-  const handleSlider = (direction) => {
-    if (direction === "left") {
-      const firstService = services.shift();
-      setServices([...services, firstService]);
-    } else {
-      const lastService = services.pop();
-      setServices([lastService, ...services]);
-    }
+ const handleSlider = (direction) => {
+  setTimeout(() => {
+    setServices((prevServices) => {
+      const servicesCopy = [...prevServices];
+      if (direction === "left") {
+        const firstService = servicesCopy.shift();
+        return [...servicesCopy, firstService];
+      } else {
+        const lastService = servicesCopy.pop();
+        return [lastService, ...servicesCopy];
+      }
+    });
+  }, 300);  // 300ms delay, ajusta el tiempo si lo necesitas
   };
+
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    handleSlider("right");
+  }, 2000);
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <section className="service-view__container">
       <div className="service-view__slider">
@@ -77,7 +92,9 @@ export const ServiceSliderView = () => {
               {services[0].title ? services[0].title : "Service Title"}
             </h2>
             <p className="service__card__description">
-              {services[0].description ? services[0].description : "Explore our range of credit cards tailored to your needs."}
+              {services[0].description
+                ? services[0].description
+                : "Explore our range of credit cards tailored to your needs."}
             </p>
             <button
               className="service__card__button"

@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer className="footer__container">
       <section className="pie_pagina__empresa">
-        <h2 className="pie_pagina__titulo">AluraBank</h2>
+        <h2 className="pie_pagina__titulo">GeneralBank</h2>
         <ul className="pie_pagina__lista">
           <li>
             <a href="/about" className="pie_pagina__link">
@@ -46,17 +46,17 @@ export const Footer = () => {
         <ul className="pie_pagina__lista">
           <li>
             <a href="#" className="pie_pagina__link">
-              0800 444 ALURA
+              0800 444 General
             </a>
           </li>
           <li>
             <a href="#" className="pie_pagina__link">
-              ayuda@alurabank.com
+              ayuda@Generalbank.com
             </a>
           </li>
           <li>
             <a href="#" className="pie_pagina__link">
-              defensoria@alurabank.com
+              defensoria@Generalbank.com
             </a>
           </li>
         </ul>
@@ -78,7 +78,7 @@ export const Footer = () => {
           </li>
         </ul>
         <h2 className="pie_pagina__logo">
-          <span className="pie_pagina__logo--negrito">Alura</span>Bank
+          <span className="pie_pagina__logo--negrito">General</span>Bank
         </h2>
       </section>
     </footer>

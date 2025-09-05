@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 #root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: #000000de;
   width: 100%;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: #000000de;
+  --fuente-principal: "Montserrat", sans-serif;
+  --fuente-logo: "Inter", sans-serif;
+  --azul-claro: #6bd1ff;
+  --black: #000000;
+  --white: #ffffff;
 }
 
 a {
@@ -24,17 +29,15 @@ a:hover {
 }
 
 body {
+  font-family: var(--fuente-principal);
+  color: var(--black);
+  font-size: 16px;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
   width: 100%;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 .onetrust-privacy__parent {
@@ -49,7 +52,6 @@ h1 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
-
 .onetrust-privacy__pop-up__hidden {
   display: none;
 }
@@ -61,7 +63,6 @@ h1 {
   padding: 20px;
   gap: 20px;
 }
-
 .onetrust-policy__text {
   width: 60%;
   font-size: 16px;
@@ -91,7 +92,6 @@ h1 {
   background-color: transparent;
   color: black;
 }
-
 .onetrust__close-btn button {
   position: absolute;
   background: none;
@@ -103,6 +103,7 @@ h1 {
   cursor: pointer;
   color: #999;
 }
+
 .privacy-modal__container {
   position: fixed;
   top: 0;
@@ -132,7 +133,6 @@ h1 {
   max-width: 90%;
   height: 800px;
 }
-
 .privacy-modal__header {
   display: flex;
   flex-direction: column;
@@ -140,7 +140,6 @@ h1 {
   align-items: center;
   margin-bottom: 20px;
 }
-
 .privacy-modal__dialog__title {
   font-size: 24px;
   font-weight: 700;
@@ -157,13 +156,11 @@ h1 {
   overflow-y: auto;
   margin-top: 20px;
 }
-
 .privacy-modal__dialog__preferences__content {
   max-height: 500px;
   overflow-y: auto;
   padding-right: 10px;
 }
-
 .privacy-modal__dialog__preferences__item {
   display: flex;
   align-items: center;
@@ -172,7 +169,6 @@ h1 {
   padding: 15px 0;
   margin-bottom: 15px;
 }
-
 .privacy-modal__close-button {
   position: absolute;
   top: 15px;
@@ -184,7 +180,6 @@ h1 {
   cursor: pointer;
   color: #999;
 }
-
 .privacy-modal__dialog__buttons {
   background-color: white;
 
@@ -259,6 +254,51 @@ button:focus-visible {
   background-color: #f5f5f5;
   border-bottom: 1px solid #e0e0e0;
 }
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--azul-claro);
+}
+.banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.banner__title {
+  padding: 10px 20px;
+  color: #5ccfff;
+  background-color: #c7eeff;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  margin: 0 auto;
+}
+.banner__loading {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--azul-claro);
+  gap: 20px;
+}
+
 .main__container {
   place-self: center;
   width: 100%;
@@ -477,7 +517,6 @@ button:focus-visible {
   color: #6bd1ff;
 }
 
-
 .about__title {
   font-size: 2em;
   margin-bottom: 20px;
@@ -505,7 +544,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
-.about__w-w-offer__card img{
+.about__w-w-offer__card img {
   border-radius: 15px 0 0 15px;
   width: 50%;
 }
@@ -517,6 +556,3 @@ button:focus-visible {
   text-align: left;
   width: 50%;
 }
-
-
-

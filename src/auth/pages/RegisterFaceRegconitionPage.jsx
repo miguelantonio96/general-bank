@@ -1,4 +1,22 @@
+import { useEffect } from "react";
+import { ButtonBankingApp } from "../../ui/components/ButtonBankingApp";
+
 export const RegisterFaceRecognitionView = () => {
+  useEffect(() => {
+    const cameraElement = document.querySelector("[data-camera]");
+    const messageElement = document.querySelector("[data-message]");
+    const photoValidationElement = document.querySelector(
+      "[data-photo-validation]"
+    );
+    const photoConfirmedElement = document.querySelector(
+      "[data-photo-confirmed]"
+    );
+    cameraElement.style.display = "none";
+    messageElement.style.display = "none";
+    photoValidationElement.style.display = "none";
+    photoConfirmedElement.style.display = "none";
+  }, []);
+
   const handleOpenCamera = async () => {
     try {
       const openCameraElements =
@@ -12,7 +30,7 @@ export const RegisterFaceRecognitionView = () => {
 
       videoElement.srcObject = streamVideo;
       videoElement.play();
-      cameraElement.style.display = "block";
+      cameraElement.style.display = "flex";
       openCameraElements.forEach((element) => {
         element.style.display = "none";
       });
@@ -24,7 +42,10 @@ export const RegisterFaceRecognitionView = () => {
   const handleTakePhoto = () => {
     const videoElement = document.querySelector("[data-video]");
     const photoCanvasElement = document.querySelector("[data-photo-canvas]");
-    const messageElement = document.querySelector("[data-mensaje]");
+    const messageElement = document.querySelector("[data-message]");
+       const photoValidationElement = document.querySelector(
+      "[data-photo-validation]"
+    );
     const cameraElement = document.querySelector("[data-camera]");
 
     const context = photoCanvasElement.getContext("2d");
@@ -41,19 +62,36 @@ export const RegisterFaceRecognitionView = () => {
     // Aquí puedes guardar la foto o realizar otras acciones con ella
     photoCanvasElement.src = fotoURL;
     cameraElement.style.display = "none";
+    photoValidationElement.style.display = "flex";
     messageElement.style.display = "flex";
     console.log("Foto tomada:", fotoURL);
   };
 
-  const handlePhotoCaptured = () => {
-    let imagenURL = "";
-    const localUserData = localStorage.getItem("register");
-    const userData = JSON.parse(localUserData);
-    userData.img_url = imagenURL;
-    localStorage.setItem("registro", JSON.stringify(userData));
+  const handlePhotoConfirmed = () => {
+    const photoValidationElement = document.querySelector(
+      "[data-photo-validation]"
+    );
+    const photoConfirmedElement = document.querySelector(
+      "[data-photo-confirmed]"
+    );
+    console.log("validation");
+    // let imagenURL = "";
+    // const localUserData = localStorage.getItem("register");
+    // const userData = JSON.parse(localUserData);
+    // userData.img_url = imagenURL;
+    // localStorage.setItem("registro", JSON.stringify(userData));
+    photoValidationElement.style.display = "none";
+    photoConfirmedElement.style.display = "flex";
   };
 
-  // const botonEnviar = document.querySelector("[data-enviar]");
+  const handleRetakePhoto = () => {
+    const cameraElement = document.querySelector("[data-camera]");
+    const messageElement = document.querySelector("[data-message]");
+    cameraElement.style.display = "flex";
+    messageElement.style.display = "none";
+  };
+
+  // const botonEnviar = document.querySelector("[data-send]");
 
   // botonEnviar.addEventListener("click", () => {
   //   const recibirDatosGuardados = localStorage.getItem("registro");
@@ -73,14 +111,14 @@ export const RegisterFaceRecognitionView = () => {
   };
 
   return (
-    <section className="formulario">
-      <div className="form__container">
+    <section className="face-recognition__container">
+      <div className="face-recognition__content">
         <img
           src="/img/status-2.png"
           alt="Step two of three"
-          className="formulario__etapas"
+          className="face-recognition__stepper"
         />
-        <div className="formulario__header" data-open-camera>
+        <div className="face-recognition__items" data-open-camera>
           <h2 className="form__title">Facial recognition</h2>
           <p className="formulario__texto">
             Click the image below to capture your photo!
@@ -95,36 +133,46 @@ export const RegisterFaceRecognitionView = () => {
           />
         </div>
 
-        <div className="form__camera" data-camera>
-          <video width="420" height="340" autoPlay data-video></video>
-          <button
-            className="take-photo__button"
+        <div className="face-recognition__items" data-camera>
+          <video width="640" height="480" autoPlay data-video></video>
+          <ButtonBankingApp
+            name="Take photo"
+            className="face-recognition__button"
             onClick={() => {
               handleTakePhoto();
             }}
-            data-tomar-foto
-          >
-            Take photo
-          </button>
+            data-take-photo
+          />
         </div>
 
-        <div className="form_message" data-mensaje>
-          <canvas width="320" height="240" data-photo-canvas></canvas>
-          <img
-            src="/img/icon_check.png"
-            alt="Validation icon"
-            className="image-captured__button"
-            onClick={() => handlePhotoCaptured()}
-          />
-          <p>That&apos;s it, image captured!</p>
+        <div className="face-recognition__items" data-message>
+          <canvas  className="image-captured__canvas"  width="480" height="480" data-photo-canvas></canvas>
 
-          <a
-            className="formulario__boton formulario__boton--enlace"
-            data-enviar
-            onClick={() => handleSendUserData()}
-          >
-            I want to open my account!
-          </a>
+          <div className="image-captured__validation" data-photo-validation>
+            <h2 className="face-recognition__title">Is this image okay?</h2>
+            <img
+              src="/img/icon_check.png"
+              alt="Validation icon"
+              className="image-captured__button"
+              onClick={() => handlePhotoConfirmed()}
+            />
+            <ButtonBankingApp
+              name="Re-take photo"
+              className="face-recognition__button"
+              onClick={() => handleRetakePhoto()}
+              data-take-photo
+            />
+          </div>
+
+          <div className="image-captured__confirmed" data-photo-confirmed>
+            <h2    className="face-recognition__title-green" >That&apos;s it, image captured!</h2>
+            <ButtonBankingApp
+              name="I want to open my account!"
+              className="face-recognition__button"
+              onClick={() => handleSendUserData()}
+              data-send
+            />
+          </div>
         </div>
       </div>
     </section>

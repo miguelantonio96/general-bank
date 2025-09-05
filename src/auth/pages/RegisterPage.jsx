@@ -6,7 +6,6 @@ export const RegisterPage = () => {
   const [inputValue, setInputValue] = useState();
 
   const handleInputChange = (e) => {
-    
     setInputValue(e.target.value);
   };
 
@@ -16,7 +15,7 @@ export const RegisterPage = () => {
         <img
           src="../img/status-1.png"
           alt="Step one of three"
-          className="formulario__etapas"
+          className="face-recognition__stepper"
         />
         <h2 className="form__title">
           Complete the fields below to create your account!
@@ -65,17 +64,17 @@ export const RegisterPage = () => {
           onChange={handleInputChange}
           type="date"
           required
-          className="campo__completo campo__completo--menor"
         />
 
-        <fieldset className="formulario__terminos">
+        <fieldset className="form__terms-conditions">
           <input
-            name="terminos"
-            className="terminos__input"
+            name="terms"
+            className="terms__input"
             type="checkbox"
+            style={{ width: "20px", height: "20px" }}
             required
           />
-          <p className="terminos__texto">
+          <p className="terms__text">
             I have read and understand the conditions for the processing of my
             data described in the <a href="#">Privacy Policy</a>.
           </p>

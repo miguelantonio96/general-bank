@@ -2,12 +2,12 @@ const botonAbrirCamara = document.querySelector("[data-video-boton]");
 const campoCamara = document.querySelector("[data-camera]");
 const video = document.querySelector("[data-video]");
 
-const botonTomarFoto = document.querySelector("[data-tomar-foto]");
+const botonTomarFoto = document.querySelector("[data-take-photo]");
 const canvas = document.querySelector("[data-video-canvas]");
-const mensaje = document.querySelector("[data-mensaje]");
+const mensaje = document.querySelector("[data-message]");
 
 let imagenURL = "";
-const botonEnviar = document.querySelector("[data-enviar]");
+const botonEnviar = document.querySelector("[data-send]");
 
 botonAbrirCamara.addEventListener("click", async () => {
   const iniciarVideo = await navigator.mediaDevices.getUserMedia({

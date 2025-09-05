@@ -10,7 +10,7 @@ export const AboutPage = () => {
         <h2 className="about__subtitle">Who We Are</h2>
 
         <p className="about__paragraph">
-          At AluraBank, we are proud to offer a secure, efficient, and
+          At GeneralBank, we are proud to offer a secure, efficient, and
           user-friendly financial services platform. Since our founding in 2020,
           we have worked hard to become a trusted digital bank, providing our
           clients with access to a wide range of financial products and services
@@ -58,7 +58,7 @@ export const AboutPage = () => {
         <h2 className="about__subtitle">Join Us Today</h2>
         <p className="about__paragraph">
           If you're looking for a reliable and innovative digital bank, look no
-          further than AluraBank. Join us today and experience the future of
+          further than GeneralBank. Join us today and experience the future of
           banking!
         </p>
       </article>
@@ -72,7 +72,7 @@ export const AboutPage = () => {
           />
           <div className="about__w-w-offer__card__content">
             <p className="about__w-w-offer__card__paragraph">
-              At AluraBank, we offer a wide range of financial products and
+              At GeneralBank, we offer a wide range of financial products and
               services designed to meet the needs of our clients. Whether you're
               looking for a simple savings account or a comprehensive investment
               portfolio, we have something for everyone.
@@ -93,7 +93,7 @@ export const AboutPage = () => {
           requirements.
         </p>
         <p className="about__paragraph">
-          At AluraBank, we are committed to providing high-quality products and
+          At GeneralBank, we are committed to providing high-quality products and
           services that are secure, efficient, and user-friendly. Join us today
           and experience the future of banking!
         </p> */}

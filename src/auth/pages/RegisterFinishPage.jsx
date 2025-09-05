@@ -6,7 +6,7 @@ export const RegisterFinishPage = () => {
           <img
             src="/img/status-3.png"
             alt="Step three of three"
-            className="formulario__etapas"
+            className="face-recognition__stepper"
           />
           <h2 className="form__title">Great!</h2>
 

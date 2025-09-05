@@ -11,7 +11,7 @@ export const ContactPage = () => {
           <h2>Online and Mobile Banking</h2>
           <p>
             For help with online or mobile banking, call our Customer Service
-            Center at (888) 816-8064 or log in to Online Banking to chat with an
+            Center at (999) 123-4567 or log in to Online Banking to chat with an
             agent. Service hours are Monday to Friday from 8:00 a.m. to 8:00
             p.m. and Saturdays from 8:00 a.m. to 5:00 p.m.
           </p>
@@ -21,15 +21,15 @@ export const ContactPage = () => {
           <p>
             If you need to report a lost or stolen card, you can do so using the
             Manage Card feature within the City Mobile Banking app or by calling
-            (833) 933-1681 (domestic) or (812) 647-9794 (international).
+            (999) 234-5678 (domestic) or (999) 345-6789 (international).
           </p>
           <p>
-            To activate a debit card or reset your debit card PIN, call (833)
-            681-3454.
+            To activate a debit card or reset your debit card PIN, call (999)
+            456-7890.
           </p>
           <p>
             If you have other questions about debit and credit cards, call our
-            Customer Service Center at (888) 816-8064 or log in to Online
+            Customer Service Center at (999) 123-4567 or log in to Online
             Banking to chat with an agent. Service hours are Monday to Friday
             from 8:00 a.m. to 8:00 p.m. and Saturdays from 8:00 a.m. to 5:00
             p.m.
@@ -39,7 +39,7 @@ export const ContactPage = () => {
           <h2>Loan Support</h2>
           <p>
             For questions about auto loans, personal loans, home loans, or
-            homeowner loans, call our Customer Service Center at (888) 816-8064
+            homeowner loans, call our Customer Service Center at (999) 123-4567
             or log in to Online Banking to chat with an agent. Service hours are
             Monday to Friday from 8:00 a.m. to 8:00 p.m. and Saturdays from 8:00
             a.m. to 5:00 p.m.
@@ -55,7 +55,7 @@ export const ContactPage = () => {
           </p>
           <p>
             To report fraud on your account, contact your local branch or our
-            Customer Service Center at (888) 816-8064. Service hours are Monday
+            Customer Service Center at (999) 123-4567. Service hours are Monday
             to Friday from 8:00 a.m. to 8:00 p.m. and Saturdays from 8:00 a.m.
             to 5:00 p.m.
           </p>
